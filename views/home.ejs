@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ('partials/head.ejs') %>
+</head>
+<body>
+  <%- include ('partials/header.ejs') %> 
+  <div id="hero-image">
+    <h1 id="hero-title"><%=title%></h1>
+  </div> 
+
+
+<div id="posters-wrapper" class="content-padding clearfix">
+  <% movies.forEach(function(movie)  { %>
+
+    <div class="poster">
+<a href="/star_wars_episode/<%=movie.episode_number%>">
+    
+      <img src="/images/<%=movie.poster%>" alt="" class="img-fluid">
+<div class="poster-info-overlay">
+
+  <h3><%=movie.title%></h3>
+  <h4>View More  <i class="fa fa-arrow-right"></i> </h4>
+</div>
+
+
+           
+    </div>   
+  </a>
+      <% }) %>
+</div>
+  
+<%- include ('partials/footer.ejs') %> 
+<%- include ('partials/scripts.ejs') %> 
+</body>
+</html>
+
